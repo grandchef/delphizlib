@@ -1,0 +1,36 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{45953F1E-7ECD-42FB-8D70-5B7B0A83DDDF}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="DelphiZlibXE10.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="DelphiZlibXE10">
+        <MSBuild Projects="DelphiZlibXE10.dproj"/>
+    </Target>
+    <Target Name="DelphiZlibXE10:Clean">
+        <MSBuild Projects="DelphiZlibXE10.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DelphiZlibXE10:Make">
+        <MSBuild Projects="DelphiZlibXE10.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="DelphiZlibXE10"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="DelphiZlibXE10:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="DelphiZlibXE10:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
